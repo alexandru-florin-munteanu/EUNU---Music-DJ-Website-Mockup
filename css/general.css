@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+FONT SIZE SYSTEM (px) 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+SPACING SYSTEM (px) 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+--- 02 COLORS 
+
+Primary: #3015ca
+ 
+*/
+
+/* ****************************************** */
+/* UTILITIES + COLORING VARIABLES */
+/* ****************************************** */
+:root {
+  --primary-color: #3015ca;
+  --darker-color: #220f8d;
+  --lighter-color: #d6d0f4;
+  --dark-text: #0a0428;
+}
+
+/* 
+primary-color: #3015ca
+tints: #d6d0f4
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* smooth scrolling in firefox and chrome */
+  /* Does not work on Safari or Edge */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
+}
+
+/* ****************************************** */
+/* GRID */
+/* ****************************************** */
+.container {
+  /* 1140px*/
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+
+  /* margin-bottom: 9.6rem; */
+}
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+/* ****************************************** */
+/* GENERAL COMPONENTS */
+/* ****************************************** */
+
+.heading-primary {
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  color: var(--dark-text);
+  letter-spacing: -0.5px;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--darker-color);
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: 700;
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+
+  /* Only for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.btn--full:hover,
+.btn--full:active {
+  background-color: var(--darker-color);
+}
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+}
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: var(--lighter-color);
+
+  /* border: 3px solid #fff */
+
+  /* Trick to add border inside */
+
+  box-shadow: inset 0 0 0 3px #fff;
+}
+.hero-img {
+  width: 100%;
+}
+
+.btn--form {
+  background-color: #1d0d79;
+  color: #d6d0f4;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+.link:link,
+.link:visited {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: var(--darker-color);
+  border-bottom: 1px solid transparent;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-left: 4.8rem;
+}
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 1.2;
+}
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-color);
+}
+/* HELPER CLASSES */
+
+.center-text {
+  text-align: center;
+}
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+strong {
+  font-weight: 500;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted var(--primary-color);
+  outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(48, 21, 202, 0.11);
+}
